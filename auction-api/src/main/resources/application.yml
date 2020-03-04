@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auction?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: password
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+  flyway:
+    baseline-on-migrate: true
+
+  jackson:
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+    time-zone: UTC
+  profiles:
+    active: dev
+file:
+  upload-dir: /home/tarik/Desktop/pictures
+
+app:
+  jwtSecret: JWTSuperSecretKey
+  jwtExpirationInMs: 9000000
+  clientOrigin: http://localhost:4200
+
+logging:
+  level:
+    org:
+      hibernate:
+        sql: DEBUG
+
